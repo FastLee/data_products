@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Data Products Course Submission</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Data Products Course Submission">
+  <meta name="author" content="Liran Bareket">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Data Products Course Submission</h1>
+    <h2>Bagged LOESS prediction and sample size</h2>
+    <p>Liran Bareket<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Bootstrap Aggregating (bagging)</h2>
+  </hgroup>
+  <article data-timings="">
+    <h3>What is Bagging</h3>
+
+<ol>
+<li>Bagging resamples a set of training data multiple time.</li>
+<li>A prediction algorithm is then applied to each of the training set permutations.</li>
+<li>The predictions are then combined together (averaged or majority vote)</li>
+</ol>
+
+<h3>Benefits of Bagging</h3>
+
+<ol>
+<li>Bagging reduced the variablity of the prediction.</li>
+<li>Works best with non linear functions</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>Resampling Simulation</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>This application will simulate resampling of data</li>
+<li>The application allows the user to resample the data using a variable number of times.</li>
+<li>The purpose of the application is to show how changing the number of times we resample the data changes the prediction curve.</li>
+<li>The application uses Shiny and uses the slider interactive element to gather user input.</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>Demo Chart</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This is the chart used in the application, here it is demonstrated with resampling 10 times.</p>
+
+<pre><code class="r">plot(ozone$ozone,ozone$temperature,pch=19,cex=0.5)
+for(i in 1:samp){lines(1:155,ll[i,],col=&quot;grey&quot;,lwd=2)}
+lines(1:155,apply(ll,2,mean),col=&quot;red&quot;,lwd=2)
+</code></pre>
+
+<p><img src="assets/fig/simple-plot-1.png" title="plot of chunk simple-plot" alt="plot of chunk simple-plot" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>Conclusion</h2>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>This application is highly interactive</li>
+<li>It demonstrate the concept of Bagging</li>
+<li>It demonstrate the capabilities of a shiny application</li>
+<li>It is fun to play with entertaining and educating</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Bootstrap Aggregating (bagging)'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Resampling Simulation'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Demo Chart'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Conclusion'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
